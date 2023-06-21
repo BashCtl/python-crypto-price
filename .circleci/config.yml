@@ -19,6 +19,17 @@ jobs:
 
 
 workflows:
-  collect-price:
+  commit:
+    jobs:
+      - crypto-price
+
+  regular:
+    triggers:
+      - schedule:
+          cron: "0 7 * * *"
+          filters:
+            branches:
+              only:
+                - master
     jobs:
       - crypto-price
