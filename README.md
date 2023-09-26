@@ -20,4 +20,4 @@
 ### Run program from the root directory:
    - python start.py
 ### Result table
-![Screenshot from 2023-09-26 13-18-34.png](..%2F..%2F..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%20from%202023-09-26%2013-18-34.png)
+![Alt text](./result_table.png?raw=true "Currencies table")
