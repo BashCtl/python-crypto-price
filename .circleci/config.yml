@@ -18,10 +18,10 @@ jobs:
           command: python start.py
 
 
-#workflows:
-#  commit:
-#    jobs:
-#      - crypto-price
+workflows:
+  commit:
+    jobs:
+      - crypto-price
 
 #  regular:
 #    triggers:
