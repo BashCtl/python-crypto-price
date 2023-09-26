@@ -12,10 +12,11 @@ if __name__ == "__main__":
     load_dotenv()
     market = CoinMarket()
     listing = market.get_listing_latest()
-    coin_filter = DataFilter(listing)
-    data = coin_filter.by_symbols("BTC", "ETH", "XRP", "ADA", "DOGE", "SOL", "DOT", "SHIB")
+    data = DataFilter(listing).by_symbols("BTC", "ETH", "XRP", "ADA", "DOGE", "SOL", "DOT", "SHIB")
+    # save data locally in json format
     writer = WriteData(data)
     writer.write_json()
+    # save data to sqlite db
     db_storage = DbStorage(data)
     db_storage.save_to_db()
 

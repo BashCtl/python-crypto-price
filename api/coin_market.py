@@ -8,14 +8,32 @@ from dotenv import load_dotenv
 class CoinMarket:
 
     def __init__(self):
+
         load_dotenv()
+        # specifying default values for api request
         self.start = "1"
         self.limit = "1000"
-        self.convert = "USD"
+        self.currency = "USD"
         self.sort = "market_cap"
         self.base_url = "https://pro-api.coinmarketcap.com"
         self.session = Session()
         self.session.headers.update(CoinMarket.headers())
+
+    def set_start(self, start):
+        self.start = start
+        return self
+
+    def set_limit(self, limit):
+        self.limit = limit
+        return self
+
+    def set_convert_to(self, currency):
+        self.currency = currency
+        return self
+
+    def set_sort_by(self, sort):
+        self.sort = sort
+        return self
 
     def set_params(self, start, limit, sort, convert):
         self.start = start
@@ -29,7 +47,7 @@ class CoinMarket:
             "start": self.start,
             "limit": self.limit,
             "sort": self.sort,
-            "convert": self.convert
+            "convert": self.currency
         }
 
     @staticmethod
@@ -41,7 +59,6 @@ class CoinMarket:
 
     def get_listing_latest(self):
         endpoint = "/v1/cryptocurrency/listings/latest"
-        self.set_params(self.start, self.limit, self.sort, self.convert)
         try:
             response = self.session.get(f"{self.base_url}{endpoint}", params=self.params())
             return json.loads(response.text)

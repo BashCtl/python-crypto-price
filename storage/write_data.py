@@ -8,6 +8,7 @@ class WriteData:
     def __init__(self, data):
         self.data = data
 
+    # write data locally to json file
     def write_json(self):
         file_path = Path().resolve()
         file_name = f"{file_path}/storage/collected_data/coin_info{time.time()}.json"

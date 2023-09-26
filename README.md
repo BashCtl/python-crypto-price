@@ -1,8 +1,10 @@
 # Application to send crypto currencies price to mail
 
 ## Description:
+    Simplte example of using Python and OOP
  Application stores price to db and sends price of the specified currencies  "BTC", "ETH", "XRP", "ADA", "DOGE", "SOL", "DOT", "SHIB",
  to mail address in form of html table. For getting price using API from https://pro.coinmarketcap.com/
+ API documents: https://coinmarketcap.com/api/documentation/v1/
 
 ### Installation locally:
  * Install Python 3
@@ -17,3 +19,5 @@
 
 ### Run program from the root directory:
    - python start.py
+### Result table
+![Screenshot from 2023-09-26 13-18-34.png](..%2F..%2F..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%20from%202023-09-26%2013-18-34.png)
