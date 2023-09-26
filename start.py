@@ -14,8 +14,8 @@ if __name__ == "__main__":
     listing = market.get_listing_latest()
     data = DataFilter(listing).by_symbols("BTC", "ETH", "XRP", "ADA", "DOGE", "SOL", "DOT", "SHIB")
     # save data locally in json format
-    writer = WriteData(data)
-    writer.write_json()
+    # writer = WriteData(data)
+    # writer.write_json()
     # save data to sqlite db
     db_storage = DbStorage(data)
     db_storage.save_to_db()
